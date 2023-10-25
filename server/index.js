@@ -9,9 +9,12 @@ const path = require('path');
 app.use(express.static(path.join(__dirname, '../build')));
 
 app.get('/', (req, res) => {
-    res.send('<h1>Hello world</h1>');
-    // res.sendFile(__dirname + '/index.html');
+    res.sendFile(__dirname + '/index.html');
 });
+
+io.on('connection', (socket) => {
+    console.log('a user connected');
+})
 
 server.listen(3000, () => {
     console.log(`Example app listening on 3000`)

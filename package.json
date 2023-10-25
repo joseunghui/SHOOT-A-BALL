@@ -27,7 +27,7 @@
   },
   "scripts": {
     "local:start": "react-scripts start",
-    "start": "nodemon --watch 'server/index.js' --exec 'node' server/index.js",
+    "start": "nodemon --watch 'server/index.js' --exec node server/index.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
