@@ -13,7 +13,11 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', (socket) => {
-    console.log('a user connected');
+    socket.on('hi', (info) => { //info 정보를 받아서 
+        io.emit('hi', `Hi user ${info}`); // 모든 유저에게 `Hi user ${info}` 메시지 보내기
+        console.log(socket.id); // 서버 확인
+    })
+    
 })
 
 server.listen(3000, () => {
