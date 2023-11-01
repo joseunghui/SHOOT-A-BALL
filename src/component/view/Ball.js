@@ -15,7 +15,7 @@ const Canvas = () => {
     console.log("canvasTag : " + canvassTag);
 
     return (
-        <div className="canvas_wrap">
+        <div className="canvas_wrap" style={{color : "green"}}>
             {}
             <canvas ref={canvasRef}></canvas>
         </div>

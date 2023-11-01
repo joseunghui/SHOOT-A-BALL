@@ -13,7 +13,6 @@ function App() {
   return (
     <div>
       <button onClick={() => socket.emit('hi', socket.id)}>connet</button>
-      <canvas id="canvas"></canvas>
     </div>
   )
 }
