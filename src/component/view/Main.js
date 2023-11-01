@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 
-const Canvas = () => {
+const MainCanvas = () => {
     const canvasRef = useRef(null);
     const [canvassTag, setCanvasTag] = useState([]);
 
@@ -15,12 +15,15 @@ const Canvas = () => {
     console.log("canvasTag : " + canvassTag);
 
     return (
-        <div className="canvas_wrap" style={{color : "green"}}>
+        <div className="canvas_wrap" style={{backgroundColor : "green"}}>
+            <span id="title" style={{justifyContent : "center", alignItems : "center", display : "flex"}}>
+                <p style={{fontSize : 100, textAlign : "center", color : "#770000"}}>SHOOT-A-BALL</p>
+            </span>
             {}
             <canvas ref={canvasRef}></canvas>
         </div>
     );
 };
 
-export default Canvas;
+export default MainCanvas;
 
