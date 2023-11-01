@@ -15,10 +15,13 @@ const MainCanvas = () => {
     console.log("canvasTag : " + canvassTag);
 
     return (
-        <div className="canvas_wrap" style={{backgroundColor : "green"}}>
+        <div className="canvas_wrap" style={{backgroundColor : "#556B2F"}}>
             <span id="title" style={{justifyContent : "center", alignItems : "center", display : "flex"}}>
-                <p style={{fontSize : 100, textAlign : "center", color : "#770000"}}>SHOOT-A-BALL</p>
+                <div><p style={{fontSize : 100, textAlign : "center", color : "#880000"}}>SHOOT-A-BALL</p></div>
+                <div><button>게임시작</button></div>
+                
             </span>
+            
             {}
             <canvas ref={canvasRef}></canvas>
         </div>
