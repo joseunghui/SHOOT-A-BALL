@@ -17,37 +17,7 @@ server.listen(3000, () => {
 });
 
 // map 을 사용해서 데이터 저장
-const userSocketId = new Map();
-const wordMap = new Map();
-
-// 랜덤 초성 생성
-function randomChosung() 
-{
-    const word = [
-        "ㄱ",
-        "ㄴ",
-        "ㄷ",
-        "ㄹ",
-        "ㅁ",
-        "ㅂ",
-        "ㅅ",
-        "ㅇ",
-        "ㅈ",
-        "ㅊ",
-        "ㅋ",
-        "ㅌ",
-        "ㅍ",
-        "ㅎ",
-      ];
-      
-      function randomChosung() {
-        const chosung = [
-          word[Math.ceil(Math.random() * word.length) - 1],
-          word[Math.ceil(Math.random() * word.length) - 1],
-        ];
-        return chosung.join("");
-      }
-}
+const userSocketIdMap = new Map();
 
 io.on('connection', (socket) => {
 
@@ -64,12 +34,10 @@ io.on('connection', (socket) => {
         console.log(userSocketIdMap.keys(), userId);
     });
 
-    // user1과 user2가 들어왔으면 wordMap에 randomWord를 세팅(randomChosung() 에서 생성한 단어)
+    // user1과 user2가 모두 들어왔는지 확인
     socket.on("start", () => {
         if (userSocketIdMap.size === 2) {
-          const randomWord = randomChosung(); // randomChosung() 로 초성 세팅
-          wordMap.set("word", randomWord);
-          io.emit("start", randomWord);
+          
         }
     });
 
